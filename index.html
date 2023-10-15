@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url(https://i.ytimg.com/vi/KFqsdtEabk0/maxresdefault.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.548);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            width: 40%;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        select, input {
+            width: 98%;
+            padding: 9px;
+            margin: 9px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #04042780;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #04042780;
+        }
+
+        .popup {
+            background-image: url(https://media.istockphoto.com/vectors/abstract-blue-technical-background-vector-id165905165?k=6&m=165905165&s=170667a&w=0&h=_ig3GUjAHE09jMOSqkSmHobSkn90S7KZlDayg0jCx10=);
+            background-size: cover;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            display: none;
+}
+
+        .popup h2 {
+            color: black;
+            font-size: 60px;
+            display: flex;
+            font-family: 'Times New Roman', Times, serif;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .close-button {
+            background-color: #04042780;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            background-color: #04042780;
+        }
+
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.507);
+        }
+
+        th, td {
+            border: 1px solid #04042b34;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #04042b34;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HACKATHON REGISTRATIONS</h1>
+        <form id="registration-form">
+            <select name="category">
+                <option value="category1">ISTE Workshop on HTML</option>
+                <option value="category2">Hackathon AI-ML Quiz</option>
+                <option value="category3">Code The Road competition</option>
+            </select>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="date" name="dob" max="2007-12-31" min="1997-01-01" required>
+            <input type="tel" name="contact" placeholder="Contact Number" required>
+            <button type="submit">Register</button>
+        </form>
+
+        <table>
+            <tr>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>ISTE Workshop on HTML</td>
+                <td>October 18, 2023</td>
+                <td>Learn HTML with ISTE this 3 hour workshop and get certificate</td>
+            </tr>
+            <tr>
+                <td>Hackathon AI-ML Quiz</td>
+                <td>October 19, 2023</td>
+                <td>Test your knowledge in AI and ML</td>
+            </tr>
+            <tr>
+                <td>Code The Road competition</td>
+                <td>October 20, 2023</td>
+                <td>Join the coding competition and win big prizes!!</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="popup" id="registration-popup">
+        <h2>You are registered!</h2>
+        <button class="close-button" id="close-button">Close</button>
+    </div>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('registration-popup').style.display = 'block';
+        });
+
+        document.getElementById('close-button').addEventListener('click', function () {
+            document.getElementById('registration-popup').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
